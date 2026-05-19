@@ -7,77 +7,130 @@
     <title>Proceso Multimedia</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="index.css">
+    <style>
+        /* Ajuste para que los enlaces no queden ocultos debajo del header si este tuviera otra altura */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Asegura que el contenedor sticky no se desborde */
+        .sticky-sidebar {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 20px; /* Distancia desde el tope de la pantalla al hacer scroll */
+            z-index: 1020;
+        }
+    </style>
 </head>
 
 <body>
     <div class="container-fluid">
+        <!-- HEADER -->
         <div class="row">
-            <header class="col-12 py-3">
-                <h1 class="text-center text-white">Proceso de Creación de productos multimedia</h1>
+            <header class="col-12 py-3 bg-dark">
+                <h1 class="text-center text-white h3 m-0">Proceso de Creación de productos multimedia</h1>
             </header>
         </div>
 
+        <!-- CUERPO PRINCIPAL -->
         <div class="row min-vh-100">
-            <nav class="col-md-2 py-4">
-                <ul class="nav flex-column gap-2">
-                    <li class="nav-item">
-                        <a class="btn btn-primary w-100" href="#investigación">Investigación</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="btn btn-primary w-100" href="#brif">Brief</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="btn btn-primary w-100" href="#idea">Idea</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="btn btn-primary w-100" href="#manual de marca">manual de marca</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="btn btn-primary w-100" href="#sketch">Sketch</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="btn btn-primary w-100" href="#wireframe">Wireframe</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="btn btn-primary w-100" href="#mockup">Mockup</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="btn btn-primary w-100" href="#prototipo">Prototipo</a>
-                    </li>
-                </ul>
+            
+            <!-- NAV IZQUIERDO (FIJO/STICKY) -->
+            <nav class="col-md-2 py-4 bg-light border-end">
+                <div class="sticky-sidebar">
+                    <ul class="nav flex-column gap-2">
+                        <li class="nav-item"><a class="btn btn-outline-primary w-100 text-start" href="#investigacion">Investigación</a></li>
+                        <li class="nav-item"><a class="btn btn-outline-primary w-100 text-start" href="#brief">Brief</a></li>
+                        <li class="nav-item"><a class="btn btn-outline-primary w-100 text-start" href="#idea">Idea</a></li>
+                        <li class="nav-item"><a class="btn btn-outline-primary w-100 text-start" href="#concepto-grafico">Concepto Gráfico</a></li>
+                        <li class="nav-item"><a class="btn btn-outline-primary w-100 text-start" href="#manual-marca">Manual de Marca</a></li>
+                        <li class="nav-item"><a class="btn btn-outline-primary w-100 text-start" href="#sketch">Sketch</a></li>
+                        <li class="nav-item"><a class="btn btn-outline-primary w-100 text-start" href="#wireframe">Wireframe</a></li>
+                        <li class="nav-item"><a class="btn btn-outline-primary w-100 text-start" href="#mockup">Mockup</a></li>
+                        <li class="nav-item"><a class="btn btn-outline-primary w-100 text-start" href="#prototipo">Prototipo</a></li>
+                    </ul>
+                </div>
             </nav>
 
-            <section class="col-md-8 bg-light py-4">
-                <div class="content-box mb-4" id="investigación">
-                    <h2 class="h4">Investigación</h2>
-                    <iframe src="investigacio.pdf" frameborder="0" width="100%" height="600px"></iframe>
+            <!-- SECCIÓN DE CONTENIDO (PROCESOS Y ARCHIVOS) -->
+            <section class="col-md-8 bg-light py-4 px-4">
+                
+                <div class="content-box mb-5" id="investigacion">
+                    <h2 class="h4 border-bottom pb-2 text-primary">Investigación</h2>
+                    <iframe src="investigacio.pdf" frameborder="0" width="100%" height="600px" class="rounded shadow-sm"></iframe>
                 </div>
-                <div class="content-box" id="manual de marca">
-                    <h2 class="h4">manual de marca</h2>
-                    <iframe src="manueal imagen personal.pdf" frameborder="0" width="100%" height="600px"
-                        id="manual de marca"></iframe>
-                        <div class="content-box" id="brif">
-                    <h2 class="h4">Brif</h2>
-                    <iframe src="brifsamuel.pdf" frameborder="0" width="100%" height="600px"
-                        id="brif"></iframe>
+
+                <div class="content-box mb-5" id="brief">
+                    <h2 class="h4 border-bottom pb-2 text-primary">Brief</h2>
+                    <iframe src="brifsamuel.pdf" frameborder="0" width="100%" height="600px" class="rounded shadow-sm"></iframe>
                 </div>
+
+                <div class="content-box mb-5" id="idea">
+                    <h2 class="h4 border-bottom pb-2 text-primary">Audio Idea Pagina Web</h2>
+                    <div class="p-3 bg-white border rounded shadow-sm text-center">
+                        <!-- Nota: Es mejor usar la etiqueta <audio> nativa para archivos .ogg en vez de un iframe -->
+                        <audio controls class="w-100">
+                            <source src="audioidea.ogg" type="audio/ogg">
+                        
+                        </audio>
+                    </div>
                 </div>
+
+                <div class="content-box mb-5" id="concepto-grafico">
+                    <h2 class="h4 border-bottom pb-2 text-primary">Concepto Gráfico Video</h2>
+                    <!-- Nota: Es mejor usar la etiqueta <video> nativa para archivos .mp4 en vez de un iframe -->
+                    <div class="ratio ratio-16x9 shadow-sm rounded overflow-hidden">
+                        <video controls>
+                            <source src="video manual de marca.mp4" type="video/mp4">
+                            
+                        </video>
+                    </div>
+                </div>
+
+                <div class="content-box mb-5" id="manual-marca">
+                    <h2 class="h4 border-bottom pb-2 text-primary">Manual de Marca</h2>
+                    <iframe src="manueal imagen personal.pdf" frameborder="0" width="100%" height="600px" class="rounded shadow-sm"></iframe>
+                </div>
+
+                <!-- ESPACIOS DE RELLENO PARA LOS ELEMENTOS FALTANTES QUE TIENES EN EL NAV -->
+                <div class="content-box mb-5" id="sketch">
+                    <h2 class="h4 border-bottom pb-2 text-primary">Sketch</h2>
+                    <div class="p-5 bg-white border rounded text-muted text-center">Espacio destinado para Sketch / Bocetos</div>
+                </div>
+
+                <div class="content-box mb-5" id="wireframe">
+                    <h2 class="h4 border-bottom pb-2 text-primary">Wireframe</h2>
+                    <div class="p-5 bg-white border rounded text-muted text-center">Espacio destinado para Wireframes</div>
+                </div>
+
+                <div class="content-box mb-5" id="mockup">
+                    <h2 class="h4 border-bottom pb-2 text-primary">Mockup</h2>
+                    <div class="p-5 bg-white border rounded text-muted text-center">Espacio destinado para Mockups</div>
+                </div>
+
+                <div class="content-box mb-5" id="prototipo">
+                    <h2 class="h4 border-bottom pb-2 text-primary">Prototipo</h2>
+                    <div class="p-5 bg-white border rounded text-muted text-center">Espacio destinado para el Prototipo Final</div>
+                </div>
+
             </section>
 
-            <aside class="col-md-2 py-4">
-                <h2 class="h5 mb-3 border-bottom pb-2">Etapas del Proyecto</h2>
-                <ul class="list-unstyled sidebar-list">
-                    <li>Exploración visual</li>
-                    <li>Recolección de información</li>
-                    <li>Planteamiento de la idea</li>
-                    <li>Concepto gráfico creativo</li>
-                    <li>Producto multimedia</li>
-                    <li>Fase pre-producción</li>
-                    <li>Fase de producción</li>
-                    <li>Fase de post-producción</li>
-                    <li>Fase de prototipo</li>
-                    <li>Proyecto terminado</li>
-                </ul>
+            <!-- ASIDE DERECHO (ETAPAS) -->
+            <aside class="col-md-2 py-4 bg-white border-start">
+                <div class="sticky-sidebar">
+                    <h2 class="h5 mb-3 border-bottom pb-2">Etapas del Proyecto</h2>
+                    <ul class="list-unstyled sidebar-list d-flex flex-column gap-2 text-secondary small">
+                        <li><i class="bi bi-circle"></i> Exploración visual</li>
+                        <li><i class="bi bi-circle"></i> Recolección de información</li>
+                        <li><i class="bi bi-circle"></i> Planteamiento de la idea</li>
+                        <li><i class="bi bi-circle"></i> Concepto gráfico creativo</li>
+                        <li><i class="bi bi-circle"></i> Producto multimedia</li>
+                        <li><i class="bi bi-circle"></i> Fase pre-producción</li>
+                        <li><i class="bi bi-circle"></i> Fase de producción</li>
+                        <li><i class="bi bi-circle"></i> Fase de post-producción</li>
+                        <li><i class="bi bi-circle"></i> Fase de prototipo</li>
+                        <li><i class="bi bi-circle"></i> Proyecto terminado</li>
+                    </ul>
+                </div>
             </aside>
         </div>
     </div>

@@ -1,64 +1,134 @@
-/* Reset básico */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-/* Variables de color para fácil mantenimiento */
+/* ==========================================
+   VARIABLES DE COLOR (Paleta de Azules)
+   ========================================== */
 :root {
-    --blue-main: #053986;
-    --blue-hover: #042d6a;
+    --azul-oscuro: #0a2540;   /* Para el encabezado principal */
+    --azul-primario: #0066cc; /* Color de acento y botones principales */
+    --azul-hover: #0052a3;    /* Estado focus/hover de los botones */
+    --azul-claro: #e6f0fa;    /* Fondos sutiles y estados activos */
+    --gris-fondo: #f8f9fa;    /* Fondo general de la página */
+    --gris-borde: #dee2e6;    /* Separadores y bordes sutiles */
+    --texto-color: #333333;   /* Color de texto principal */
 }
 
+/* ==========================================
+   ESTILOS GENERALES
+   ========================================== */
+body {
+    background-color: var(--gris-fondo);
+    color: var(--texto-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Header Principal */
 header {
-    background-color: var(--blue-main);
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    background-color: var(--azul-oscuro) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
+header h1 {
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+/* ==========================================
+   MENÚ LATERAL IZQUIERDO (Navegación)
+   ========================================== */
 nav {
-    background-color: var(--blue-main);
-    border-right: 1px solid rgba(255,255,255,0.1);
+    background-color: #ffffff !important;
 }
 
-/* Estilos de los botones laterales */
-.btn-primary {
-    background-color: transparent !important;
-    border: 1px solid rgba(255,255,255,0.4) !important;
-    text-align: left;
-    transition: all 0.3s ease;
-}
-
-.btn-primary:hover {
-    background-color: rgba(255,255,255,0.1) !important;
-    transform: translateX(5px);
-}
-
-/* Estilos del Aside */
-aside {
-    background-color: var(--blue-main);
-    color: white;
-}
-
-.sidebar-list li {
-    padding: 10px 0;
-    font-size: 0.9rem;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-}
-
-.sidebar-list li:last-child {
-    border-bottom: none;
-}
-
-/* Contenedor de Iframes */
-.content-box {
-    background: white;
-    padding: 20px;
+/* Estilo personalizado para los botones del menú */
+nav .btn-outline-primary {
+    color: var(--azul-primario);
+    border-color: var(--azul-primario);
+    font-weight: 500;
+    transition: all 0.25s ease-in-out;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
 }
 
-/* Asegurar que el contenido ocupe el alto disponible */
-.min-vh-100 {
-    min-height: 100vh;
+/* Efecto al pasar el cursor (Hover) */
+nav .btn-outline-primary:hover {
+    background-color: var(--azul-primario);
+    border-color: var(--azul-primario);
+    color: #ffffff;
+    transform: translateX(4px); /* Pequeño desplazamiento interactivo */
+}
+
+/* ==========================================
+   SECCIÓN DE CONTENIDO (Tarjetas e Iframes)
+   ========================================== */
+section {
+    background-color: var(--gris-fondo) !important;
+}
+
+/* Cajas de contenido (Tarjetas de cada etapa) */
+.content-box {
+    background-color: #ffffff;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--gris-borde);
+    transition: transform 0.2s ease;
+}
+
+/* Efecto foco al pasar por encima de una tarjeta */
+.content-box:hover {
+    box-shadow: 0 6px 15px rgba(0, 102, 204, 0.1);
+}
+
+/* Títulos de las secciones */
+.content-box h2 {
+    font-weight: 600;
+    color: var(--azul-oscuro) !important;
+    border-bottom: 2px solid var(--azul-claro) !important;
+}
+
+/* Estilizado de Iframes, Videos y Audios */
+iframe, video {
+    border: 1px solid var(--gris-borde);
+    border-radius: 8px;
+    background-color: #ffffff;
+}
+
+audio {
+    border-radius: 30px;
+    background-color: var(--azul-claro);
+}
+
+/* ==========================================
+   BARRA LATERAL DERECHA (Etapas)
+   ========================================== */
+aside {
+    background-color: #ffffff !important;
+}
+
+aside h2 {
+    color: var(--azul-oscuro);
+    font-weight: 600;
+}
+
+/* Lista de etapas */
+.sidebar-list li {
+    padding: 6px 10px;
+    border-radius: 6px;
+    transition: background-color 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Un sutil color azul al pasar el mouse sobre las etapas */
+.sidebar-list li:hover {
+    background-color: var(--azul-claro);
+    color: var(--azul-primario) !important;
+    cursor: default;
+}
+
+/* Añade un punto azul estilizado antes de cada etapa */
+.sidebar-list li::before {
+    content: "•";
+    color: var(--azul-primario);
+    font-weight: bold;
+    font-size: 1.2rem;
 }
