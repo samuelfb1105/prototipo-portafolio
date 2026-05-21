@@ -12,11 +12,13 @@
         html {
             scroll-behavior: smooth;
         }
+
         /* Asegura que el contenedor sticky no se desborde */
         .sticky-sidebar {
             position: -webkit-sticky;
             position: sticky;
-            top: 20px; /* Distancia desde el tope de la pantalla al hacer scroll */
+            top: 20px;
+            /* Distancia desde el tope de la pantalla al hacer scroll */
             z-index: 1020;
         }
     </style>
@@ -33,35 +35,46 @@
 
         <!-- CUERPO PRINCIPAL -->
         <div class="row min-vh-100">
-            
+
             <!-- NAV IZQUIERDO (FIJO/STICKY) -->
             <nav class="col-md-2 py-4 bg-light border-end">
                 <div class="sticky-sidebar">
                     <ul class="nav flex-column gap-2">
-                        <li class="nav-item"><a class="btn btn-outline-primary w-100 text-start" href="#investigacion">Investigación</a></li>
-                        <li class="nav-item"><a class="btn btn-outline-primary w-100 text-start" href="#brief">Brief</a></li>
-                        <li class="nav-item"><a class="btn btn-outline-primary w-100 text-start" href="#idea">Idea</a></li>
-                        <li class="nav-item"><a class="btn btn-outline-primary w-100 text-start" href="#concepto-grafico">Concepto Gráfico</a></li>
-                        <li class="nav-item"><a class="btn btn-outline-primary w-100 text-start" href="#manual-marca">Manual de Marca</a></li>
-                        <li class="nav-item"><a class="btn btn-outline-primary w-100 text-start" href="#sketch">Sketch</a></li>
-                        <li class="nav-item"><a class="btn btn-outline-primary w-100 text-start" href="#wireframe">Wireframe</a></li>
-                        <li class="nav-item"><a class="btn btn-outline-primary w-100 text-start" href="#mockup">Mockup</a></li>
-                        <li class="nav-item"><a class="btn btn-outline-primary w-100 text-start" href="#prototipo">Prototipo</a></li>
+                        <li class="nav-item"><a class="btn btn-outline-primary w-100 text-start"
+                                href="#investigacion">Investigación</a></li>
+                        <li class="nav-item"><a class="btn btn-outline-primary w-100 text-start" href="#brief">Brief</a>
+                        </li>
+                        <li class="nav-item"><a class="btn btn-outline-primary w-100 text-start" href="#idea">Idea</a>
+                        </li>
+                        <li class="nav-item"><a class="btn btn-outline-primary w-100 text-start"
+                                href="#concepto-grafico">Concepto Gráfico</a></li>
+                        <li class="nav-item"><a class="btn btn-outline-primary w-100 text-start"
+                                href="#manual-marca">Manual de Marca</a></li>
+                        <li class="nav-item"><a class="btn btn-outline-primary w-100 text-start"
+                                href="#sketch">Sketch</a></li>
+                        <li class="nav-item"><a class="btn btn-outline-primary w-100 text-start"
+                                href="#wireframe">Wireframe</a></li>
+                        <li class="nav-item"><a class="btn btn-outline-primary w-100 text-start"
+                                href="#mockup">Mockup</a></li>
+                        <li class="nav-item"><a class="btn btn-outline-primary w-100 text-start"
+                                href="#prototipo">Prototipo</a></li>
                     </ul>
                 </div>
             </nav>
 
             <!-- SECCIÓN DE CONTENIDO (PROCESOS Y ARCHIVOS) -->
             <section class="col-md-8 bg-light py-4 px-4">
-                
+
                 <div class="content-box mb-5" id="investigacion">
                     <h2 class="h4 border-bottom pb-2 text-primary">Investigación</h2>
-                    <iframe src="investigacio.pdf" frameborder="0" width="100%" height="600px" class="rounded shadow-sm"></iframe>
+                    <iframe src="investigacio.pdf" frameborder="0" width="100%" height="600px"
+                        class="rounded shadow-sm"></iframe>
                 </div>
 
                 <div class="content-box mb-5" id="brief">
                     <h2 class="h4 border-bottom pb-2 text-primary">Brief</h2>
-                    <iframe src="brifsamuel.pdf" frameborder="0" width="100%" height="600px" class="rounded shadow-sm"></iframe>
+                    <iframe src="brifsamuel.pdf" frameborder="0" width="100%" height="600px"
+                        class="rounded shadow-sm"></iframe>
                 </div>
 
                 <div class="content-box mb-5" id="idea">
@@ -70,7 +83,7 @@
                         <!-- Nota: Es mejor usar la etiqueta <audio> nativa para archivos .ogg en vez de un iframe -->
                         <audio controls class="w-100">
                             <source src="audioidea.ogg" type="audio/ogg">
-                        
+
                         </audio>
                     </div>
                 </div>
@@ -81,35 +94,40 @@
                     <div class="ratio ratio-16x9 shadow-sm rounded overflow-hidden">
                         <video controls>
                             <source src="video manual de marca.mp4" type="video/mp4">
-                            
+
                         </video>
                     </div>
                 </div>
 
                 <div class="content-box mb-5" id="manual-marca">
                     <h2 class="h4 border-bottom pb-2 text-primary">Manual de Marca</h2>
-                    <iframe src="manueal imagen personal.pdf" frameborder="0" width="100%" height="600px" class="rounded shadow-sm"></iframe>
+                    <iframe src="manueal imagen personal.pdf" frameborder="0" width="100%" height="600px"
+                        class="rounded shadow-sm"></iframe>
                 </div>
 
                 <!-- ESPACIOS DE RELLENO PARA LOS ELEMENTOS FALTANTES QUE TIENES EN EL NAV -->
                 <div class="content-box mb-5" id="sketch">
                     <h2 class="h4 border-bottom pb-2 text-primary">Sketch</h2>
-                    <div class="p-5 bg-white border rounded text-muted text-center">Espacio destinado para Sketch / Bocetos</div>
+                    <iframe src="sketch.pdf" frameborder="0" width="100%" height="600px"
+                        class="rounded shadow-sm"></iframe>
                 </div>
 
                 <div class="content-box mb-5" id="wireframe">
                     <h2 class="h4 border-bottom pb-2 text-primary">Wireframe</h2>
-                    <div class="p-5 bg-white border rounded text-muted text-center">Espacio destinado para Wireframes</div>
+                    <iframe src="Desktop - 1.pdf" frameborder="0" width="100%" height="600px"
+                        class="rounded shadow-sm"></iframe>
                 </div>
 
                 <div class="content-box mb-5" id="mockup">
                     <h2 class="h4 border-bottom pb-2 text-primary">Mockup</h2>
-                    <div class="p-5 bg-white border rounded text-muted text-center">Espacio destinado para Mockups</div>
+                    <iframe src="Sin título-2_mokup_merged.pdf" frameborder="0" width="100%" height="600px"
+                        class="rounded shadow-sm"></iframe>
                 </div>
 
                 <div class="content-box mb-5" id="prototipo">
                     <h2 class="h4 border-bottom pb-2 text-primary">Prototipo</h2>
-                    <div class="p-5 bg-white border rounded text-muted text-center">Espacio destinado para el Prototipo Final</div>
+                    <div class="p-5 bg-white border rounded text-muted text-center">Espacio destinado para el Prototipo
+                        Final</div>
                 </div>
 
             </section>
